@@ -45,6 +45,5 @@
   },
   "proxy": "https://sheyroom.onrender.com",
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+    "antd": "^5.23.0"   }
 }
