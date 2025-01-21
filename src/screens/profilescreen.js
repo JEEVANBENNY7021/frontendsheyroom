@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Tabs } from 'antd';
 import axios from 'axios';
 import Loader from "../components/Loader";
-import Error from "../components/Error";
 import Swal from 'sweetalert2';
 import { FaUserTie } from "react-icons/fa";
-import { Divider, Flex, Tag } from 'antd';
+import {  Tag } from 'antd';
 const { TabPane } = Tabs;
 
 function ProfileScreen() { // Changed 'profilescreen' to 'ProfileScreen'
@@ -14,9 +13,10 @@ function ProfileScreen() { // Changed 'profilescreen' to 'ProfileScreen'
 
     useEffect(() => {
         if (!user) {
-            window.location.href = '/login';
+          window.location.href = '/login';
         }
-    }, []);
+      }, [user]);
+      
 
     return (
         <div className='ml-3 mt-3 bs'>
@@ -47,11 +47,10 @@ function ProfileScreen() { // Changed 'profilescreen' to 'ProfileScreen'
 }
 
 export default ProfileScreen;
-
 export function MyBookings() {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState();
+    const [error, setError] = useState(null);
     const user = JSON.parse(localStorage.getItem("currentUser"));
 
     useEffect(() => {
@@ -59,12 +58,12 @@ export function MyBookings() {
             try {
                 setLoading(true);
                 const { data } = await axios.post("/api/bookings/getbookingsbyuserid", { userid: user._id });
-                console.log(data)
+                console.log(data);
                 setBookings(data);
                 setLoading(false);
             } catch (err) {
                 console.error("Error fetching bookings:", err);
-                setError(true);
+                setError("Failed to load bookings. Please try again later."); // Set an error message
                 setLoading(false);
             }
         };
@@ -74,56 +73,59 @@ export function MyBookings() {
 
     async function cancelBooking(bookingid, roomid) {
         try {
-            setLoading(true)
-            const result = await (await axios.post("/api/bookings/cancelbooking", { bookingid, roomid })).data
-            console.log(result)
-            setLoading(false)
-            Swal.fire('congrats ', ' Your booking has been cancelled', 'success').then(result => {
-                window.location.reload()
-            })
+            setLoading(true);
+            const result = await axios.post("/api/bookings/cancelbooking", { bookingid, roomid });
+            console.log(result);
+            setLoading(false);
+            Swal.fire('Congrats', 'Your booking has been cancelled', 'success').then(() => {
+                window.location.reload();
+            });
         } catch (error) {
-            console.log(error)
-            setLoading(false)
-            Swal.fire('oops', ' something went wrong', 'error')
+            console.error(error);
+            setLoading(false);
+            Swal.fire('Oops', 'Something went wrong', 'error');
         }
-
     }
-
 
     return (
         <div>
             <div className='row'>
                 <div className='col-md-6'>
-                    {loading && (<Loader />)}
-                    {bookings && (bookings.map(bookings => {
-
-                        return <div className='bs'>
-                            <h1> {bookings.room}</h1>
-                            <p> <b> BookingId</b>: {bookings._id} </p>
-                            <p> <b> CheckIn </b> :{bookings.startDate} </p>
-                            <p> <b>  CheckOut </b>:{bookings.endDate} </p>
-                            <p><b>  Amount </b>:{bookings.totalAmount} </p>
+                    {loading && <Loader />}
+                    {error && (
+                        <div className="alert alert-danger">
+                            <strong>Error:</strong> {error}
+                        </div>
+                    )}
+                    {bookings && bookings.map((booking) => (
+                        <div className='bs' key={booking._id}>
+                            <h1>{booking.room}</h1>
+                            <p><b>BookingId:</b> {booking._id}</p>
+                            <p><b>CheckIn:</b> {booking.startDate}</p>
+                            <p><b>CheckOut:</b> {booking.endDate}</p>
+                            <p><b>Amount:</b> {booking.totalAmount}</p>
                             <p>
-                            <b>Status</b> : {' '}
-                            {bookings.status== 'cancelled' ? ( <Tag color="red">CANCELLED</Tag>): <Tag color="green"> CONFIRMED</Tag> }
+                                <b>Status:</b>{' '}
+                                {booking.status === 'cancelled' ? (
+                                    <Tag color="red">CANCELLED</Tag>
+                                ) : (
+                                    <Tag color="green">CONFIRMED</Tag>
+                                )}
                             </p>
-
-
-                            {bookings.status !== 'cancelled' && (
-
-                                <div className='text-right' >
-                                    <button className="btn btn-primary" onClick={() => { cancelBooking(bookings._id, bookings.roomid) }} > CANCEL BOOKING </button>
-
+                            {booking.status !== 'cancelled' && (
+                                <div className='text-right'>
+                                    <button
+                                        className="btn btn-primary"
+                                        onClick={() => cancelBooking(booking._id, booking.roomid)}
+                                    >
+                                        CANCEL BOOKING
+                                    </button>
                                 </div>
                             )}
-
                         </div>
-
-                    }))}
+                    ))}
                 </div>
-
             </div>
-
         </div>
     );
 }

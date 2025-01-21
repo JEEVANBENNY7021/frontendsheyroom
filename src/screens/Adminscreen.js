@@ -1,8 +1,7 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tabs } from 'antd';
 import axios from 'axios';
 import Loader from "../components/Loader";
-import Error from "../components/Error";
 import   Swal from 'sweetalert2';
 const { TabPane } = Tabs;
 function Adminscreen() {
@@ -47,8 +46,7 @@ export function Bookings() {
     const [bookings, setBookings] = useState([]);
 
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState();
-
+    const [error, setError] = useState(null); // Keeping error if needed
     useEffect(() => {
         const fetchBookings = async () => {
             try {

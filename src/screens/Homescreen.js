@@ -3,9 +3,9 @@ import axios from 'axios';
 import Room from '../components/Room';
 import Loader from '../components/Loader';
 import 'antd/dist/antd';
-import Error from '../components/Error';
+
 import moment from 'moment';
-import { DatePicker, Space } from 'antd';
+import { DatePicker,  } from 'antd';
 const { RangePicker } = DatePicker;
 function Homescreen() {
     const [rooms, setrooms] = useState([]);
@@ -14,12 +14,10 @@ function Homescreen() {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
     const [duplicaterooms, setduplicaterooms] = useState([])
-
     const [searchkey , setsearchkey] = useState('')
     const [type, settype ] = useState('all')
 
-
-
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -84,7 +82,7 @@ function Homescreen() {
                 }
             }
 
-            if (availabilty ==true || room.currentbookings.length == 0) {
+            if (availabilty === true || room.currentbookings.length === 0) {
                 temprooms.push(room);
 
             }
@@ -106,10 +104,9 @@ function Homescreen() {
 
             settype(e)
           
-            if(e!== 'all'){
-
-                const temprooms = duplicaterooms.filter(room=>room.type.toLowerCase()==e.toLowerCase())
-                setrooms(temprooms)
+            if (e !== 'all') {
+                const temprooms = duplicaterooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+                setrooms(temprooms);
             }else{
                 setrooms(duplicaterooms)
             }

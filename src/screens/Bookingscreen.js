@@ -22,6 +22,7 @@ function Bookingscreen() {
       try {
         setLoading(true);
         const { data } = await axios.post("/api/rooms/getroombyid", { roomid });
+
         setRoom(data.room);
         setLoading(false);
       } catch (error) {
@@ -73,6 +74,7 @@ function Bookingscreen() {
     try {
       setLoading(true);
       const result = await axios.post('/api/bookings/bookroom', bookingDetails);
+      console.log(result)
       setLoading(false);
       Swal.fire("congratuations ", "Your Room Booked  Successful", "success").then(result=>{
         window.location.href = "/profile";

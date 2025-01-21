@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HashLoader from "react-spinners/HashLoader";
 
 function Loader() {
-  const [loading, setLoading] = useState(true);
+  const [loading, ] = useState(true);
 
   return (
     <div
