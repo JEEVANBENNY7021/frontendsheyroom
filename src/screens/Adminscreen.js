@@ -70,7 +70,7 @@ export function Bookings() {
 
                 <h1>Bookings</h1>
                 {loading && <Loader />}
-
+                {error && <p className="text-danger">Error: {error}</p>}
                 <table className='table table-bordered table-dark'>
                     <thead className='bs'>
                         <tr>
@@ -193,7 +193,7 @@ export function Users() {
             <div className="col-md-12">
                 <h1>Users</h1>
                 {loading && <Loader />}
-
+                {error && <div className="alert alert-danger">{error}</div>}
                 <table className="table table-dark table-bordered">
                     <thead>
                         <tr>
@@ -235,7 +235,7 @@ export function AddRoom() {
     const [imageurl2 , setimageurl2] = useState()
     const [imageurl3 , setimageurl3] = useState()
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState();
+   
 
 
      async function addRoom(){
@@ -272,6 +272,7 @@ export function AddRoom() {
           
             <div className="col-md-5">
                {loading && <Loader/>}
+               
                 <input type='text' className='form-control' placeholder='room name'
                 value={name} onChange={(e) => setname(e.target.value)} />
                 <input type='text' className='form-control' placeholder='rent per day'

@@ -11,7 +11,7 @@ function Room({ room, startDate, endDate }) {
     return (
         <div className="row bs">
             <div className="col-md-4">
-                <img src={room.imageurls[0]} className="smallimg" alt={`${room.name} image`} />
+                <img src={room.imageurls[0]} className="smallimg" alt={`${room.name}`} />
             </div>
             <div className="col-md-7">
                 <h1>{room.name}</h1>
@@ -42,7 +42,7 @@ function Room({ room, startDate, endDate }) {
                                 <img
                                     className="d-block w-100 bigimg"
                                     src={url}
-                                    alt={`Slide ${index + 1} of ${room.name}`}
+                                    alt={`${room.name} - Slide ${index + 1}`}
                                 />
                             </Carousel.Item>
                         ))}

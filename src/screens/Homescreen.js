@@ -10,7 +10,7 @@ const { RangePicker } = DatePicker;
 function Homescreen() {
     const [rooms, setrooms] = useState([]);
     const [loading, setloading] = useState()
-    const [error, seterror] = useState()
+    const [error, seterror] = useState(false)
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
     const [duplicaterooms, setduplicaterooms] = useState([])
@@ -157,6 +157,7 @@ function Homescreen() {
                        
                     )}
                 </div>
+                {error && <p>An error occurred while fetching rooms.</p>}
             </div>
         );
     }

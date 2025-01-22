@@ -82,6 +82,7 @@ function Bookingscreen() {
     } catch (error) {
       console.error("Error booking room:", error);
       setLoading(false)
+      setError(true); 
       Swal.fire("OOps ", "Something went wrong", "error");
     }
   }
@@ -121,6 +122,7 @@ function Bookingscreen() {
                 </div>
 
                 <div style={{ float: "right" }}>
+                   {error && <Error />}
                   <StripeCheckout
                   amount={totalAmount *100}
                     token={onToken}
