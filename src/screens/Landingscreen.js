@@ -54,7 +54,7 @@ function Landingscreen() {
                 </p>
               </div>
               <div className="continue-button">
-              <a href="#" className='me-5 p-2 text-reset'>Continue →</a>
+              <a href="/home" className='me-5 p-2 text-reset'>Continue →</a>
               </div>
             </div>
           </div>
@@ -151,22 +151,22 @@ function Landingscreen() {
             </div>
 
             <div style={{ margin: '20px'  }}>
-              <a href='#' className='me-5 p-2 text-reset'>
+              <a href='https://www.facebook.com/' className='me-5 p-2 text-reset'>
                 <MDBIcon fab icon="facebook-f" />
               </a>
-              <a href='#' className='me-4 p-2 text-reset'>
+              <a href='#https://x.com/i/flow/login' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="twitter" />
               </a>
-              <a href='#' className='me-4 p-2 text-reset'>
+              <a href='https://www.google.co.in/' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="google" />
               </a>
-              <a href='#' className='me-4 p-2 text-reset'>
+              <a href='https://www.instagram.com/' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="instagram" />
               </a>
-              <a href='#' className='me-4 p-2 text-reset'>
+              <a href='https://www.linkedin.com/' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="linkedin" />
               </a>
-              <a href='#' className='me-4 p-2 text-reset'>
+              <a href='https://github.com/' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="github" />
               </a>
             </div>
