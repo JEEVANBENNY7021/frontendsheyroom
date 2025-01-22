@@ -1,6 +1,4 @@
-import React from "react";
 import { Link } from "react-router-dom";
-
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 function Landingscreen() {
@@ -56,7 +54,7 @@ function Landingscreen() {
                 </p>
               </div>
               <div className="continue-button">
-                <a href="#">Continue →</a>
+              <a href="#" className='me-5 p-2 text-reset'>Continue →</a>
               </div>
             </div>
           </div>
@@ -156,19 +154,19 @@ function Landingscreen() {
               <a href='' className='me-5 p-2 text-reset'>
                 <MDBIcon fab icon="facebook-f" />
               </a>
-              <a href='' className='me-4 p-2 text-reset'>
+              <a href='#' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="twitter" />
               </a>
-              <a href='' className='me-4 p-2 text-reset'>
+              <a href='#' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="google" />
               </a>
-              <a href='' className='me-4 p-2 text-reset'>
+              <a href='#' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="instagram" />
               </a>
-              <a href='' className='me-4 p-2 text-reset'>
+              <a href='#' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="linkedin" />
               </a>
-              <a href='' className='me-4 p-2 text-reset'>
+              <a href='#' className='me-4 p-2 text-reset'>
                 <MDBIcon fab icon="github" />
               </a>
             </div>
@@ -194,7 +192,7 @@ function Landingscreen() {
                   </p>
                 </MDBCol>
 
-                
+                 
 
                 <MDBCol md="6" lg="2" xl="2" className='mx-auto mb-4'>
                   <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
@@ -238,19 +236,23 @@ function Landingscreen() {
             </MDBContainer>
           </section>
 
-          <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-            © 2021 Copyright:
-            <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-              sheyrooms.com
-            </a>
-          </div>
+          <section className=''>
+            <MDBContainer className='text-center text-md-start mt-5'>
+              <MDBRow className='mt-3'>
+                <MDBCol md="6" lg="6" xl="6" className='mx-auto mb-4'>
+                  <p>
+                    © {new Date().getFullYear()} Copyright:
+                    <a className='text-reset fw-bold' href='https://sheyrooms.com/'>
+                      sheyrooms.com
+                    </a>
+                  </p>
+                </MDBCol>
+              </MDBRow>
+            </MDBContainer>
+          </section>
         </MDBFooter>
-
       </div>
-
     </div>
-
-
   );
 }
 
