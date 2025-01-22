@@ -151,7 +151,7 @@ function Landingscreen() {
             </div>
 
             <div style={{ margin: '20px'  }}>
-              <a href='' className='me-5 p-2 text-reset'>
+              <a href='#' className='me-5 p-2 text-reset'>
                 <MDBIcon fab icon="facebook-f" />
               </a>
               <a href='#' className='me-4 p-2 text-reset'>
