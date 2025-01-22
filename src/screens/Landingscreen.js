@@ -38,7 +38,7 @@ function Landingscreen() {
             <div className="image-about" data-aos="fade-up">
               <img
                 src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="image"
+                alt="About our services"
               />
             </div>
             <div className="box-about" data-aos="fade-down">
