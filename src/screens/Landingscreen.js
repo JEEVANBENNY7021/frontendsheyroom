@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MDBFooter, MDBIcon } from 'mdb-react-ui-kit';
-
+import image from '../images/download.png'
 function Landingscreen() {
   return (
     <div style={{width:"100%", height:"100vh"}} className="container-fluid landing justify-content-center">
@@ -14,11 +14,11 @@ function Landingscreen() {
         }}
       >
         <div  className="col-md-10 col-12 mt-7 ">
-          <img
-            src="https://thumbs.dreamstime.com/b/sr-letter-logo-heraldic-shield-shape-crown-vintage-black-background-template-design-343453572.jpg"
-            alt="Logo"
+          <img 
+          src={image}
+  alt="Logo"
             className="img-fluid"
-            style={{ width: "350px", height: "320px", }}
+            style={{ width: "230px", height: "230px", }}
           />
           <h2 className="text-white" style={{ fontSize: "100px" , }}>SheyRooms</h2>
           <h1 className="text-white ">
