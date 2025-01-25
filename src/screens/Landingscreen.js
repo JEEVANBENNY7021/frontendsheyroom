@@ -188,10 +188,10 @@ function Landingscreen() {
 
 
       {/* Footer Section */}
-      <div className="footer py-5"  style={{ color: 'white' }}>
+      <div className="footer py-5"  style={{ color: 'white' , textAlign:"center"}}>
         <MDBFooter className="text-center text-lg-start text-muted">
           <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <div className="me-4 d-none d-lg-block">
+            <div  style={{ color: 'white' , textAlign:"center"}} className="me-4 d-none d-lg-block">
               <span>Get connected with us on social networks:</span>
             </div>
 
@@ -216,7 +216,7 @@ function Landingscreen() {
           </section>
 
           <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <div className="me-4"  style={{ color: 'white' }}>
+            <div className="me-4"  style={{ color: 'white', textAlign:"center" }}>
               <span>Created By Jeevan Benny ( 1/25/2025)</span>
             </div>
           </section>
