@@ -20,10 +20,15 @@ function Landingscreen() {
             className="img-fluid"
             style={{ width: "230px", height: "230px", }}
           />
-          <h2 className="text-white" style={{ fontSize: "100px" , }}>SheyRooms</h2>
-          <h1 className="text-white ">
-            "There is only one boss. The Guest"
-          </h1>
+          <div className="inline-block">
+  <h2 style={{ fontSize: "70px" }} className="text-white text-4xl sm:text-6xl md:text-8xl lg:text-9xl">
+    SheyRooms
+  </h2>
+  <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+    "There is only one boss. The Guest"
+  </h1>
+</div>
+          
           <Link to="/home">
             <button
               className="btn landingbtn"
