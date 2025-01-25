@@ -188,15 +188,15 @@ function Landingscreen() {
 
 
       {/* Footer Section */}
-      <div className="footer py-5">
+      <div className="footer py-5"  style={{ color: 'white' }}>
         <MDBFooter className="text-center text-lg-start text-muted">
           <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div className="me-4 d-none d-lg-block">
               <span>Get connected with us on social networks:</span>
             </div>
 
-            <div className="social-icons">
-              <a href="https://www.facebook.com/" className="me-5 p-2 text-reset">
+            <div className="social-icons "  style={{ color: 'white' }}>
+              <a href="https://www.facebook.com/" className="me-5 p-2 text-reset " >
                 <MDBIcon fab icon="facebook-f" />
               </a>
               <a href="https://x.com/i/flow/login" className="me-4 p-2 text-reset">
@@ -211,15 +211,13 @@ function Landingscreen() {
               <a href="https://www.linkedin.com/" className="me-4 p-2 text-reset">
                 <MDBIcon fab icon="linkedin" />
               </a>
-              <a href="https://www.youtube.com/" className="me-4 p-2 text-reset">
-                <MDBIcon fab icon="youtube" />
-              </a>
+            
             </div>
           </section>
 
           <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <div className="me-4">
-              <span>Created By Jeevan Benny</span>
+            <div className="me-4"  style={{ color: 'white' }}>
+              <span>Created By Jeevan Benny ( 1/25/2025)</span>
             </div>
           </section>
         </MDBFooter>
